@@ -1,5 +1,5 @@
-const IAN_PHOTO = "/ian.jpg";
-const BEN_PHOTO = "/ben.jpg";
+const IAN_PHOTO = "/ian.png";
+const BEN_PHOTO = "/ben.png";
 const LINKEDIN_ICON = "https://www.figma.com/api/mcp/asset/bba17db2-fbc5-42ad-a0fb-50192770ad2a";
 
 const founders = [
