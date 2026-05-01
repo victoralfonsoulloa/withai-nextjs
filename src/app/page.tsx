@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SocialProofBar from "@/components/SocialProofBar";
-import WhatsInsideSection from "@/components/WhatsInsideSection";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import DifferentSection from "@/components/DifferentSection";
@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <SocialProofBar />
-      <WhatsInsideSection />
+      <CapabilitiesSection />
       <IntegrationsSection />
       <TestimonialsSection />
       <DifferentSection />
