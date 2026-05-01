@@ -17,7 +17,7 @@ export default function HeroSection() {
         />
 
         <div className="flex flex-col items-center gap-4 relative z-10 w-full">
-          <div className="bg-white border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] w-full md:w-auto justify-center md:justify-start">
+          <div className="bg-white border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px]">
             <span className="relative flex size-[10px] shrink-0">
               <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
               <span className="relative inline-flex size-[10px] rounded-full bg-green-500" />
@@ -44,12 +44,6 @@ export default function HeroSection() {
             className="bg-[#fcb344] border border-[#fcb344] text-[#242424] px-6 py-3 rounded-[10px] font-sans font-medium text-[16px] text-center shadow-[0px_3px_6.25px_rgba(0,0,0,0.11)] hover:brightness-105 transition-all duration-150"
           >
             Book a consultation
-          </a>
-          <a
-            href="#"
-            className="bg-[#f5f4ee] border border-[#242424] text-[#242424] px-6 py-3 rounded-[10px] font-sans font-medium text-[16px] text-center hover:bg-white transition-colors duration-150"
-          >
-            See how it works
           </a>
         </div>
       </div>

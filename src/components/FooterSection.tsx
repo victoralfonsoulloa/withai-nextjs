@@ -12,10 +12,10 @@ export default function FooterSection() {
         <DotGrid variant="dark" />
 
         {/* CTA row */}
-        <div className="flex items-end justify-between relative z-10">
-          {/* Left: badge + headline */}
-          <div className="flex flex-col gap-3 max-w-[706px]">
-            <div className="bg-white border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] self-start">
+        <div className="flex flex-col items-center gap-4 relative z-10 min-[1241px]:flex-row min-[1241px]:items-end min-[1241px]:justify-between">
+          {/* Badge + headline */}
+          <div className="flex flex-col gap-3 items-center text-center min-[1241px]:items-start min-[1241px]:text-left min-[1241px]:max-w-[706px]">
+            <div className="bg-white border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px]">
               <span className="relative flex size-2.5 shrink-0">
                 <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex size-2.5 rounded-full bg-green-500" />
@@ -24,18 +24,18 @@ export default function FooterSection() {
                 AI infrastructure for independent funds
               </span>
             </div>
-            <h2 className="font-serif text-[56px] text-white leading-[1.2] tracking-[-1.68px]">
+            <h2 className="font-serif text-[40px] min-[1241px]:text-[56px] text-white leading-[1.2] tracking-[-1.2px] min-[1241px]:tracking-[-1.68px] max-w-[662px] min-[1241px]:max-w-none">
               If you want to see what your firm looks like one year in the future
             </h2>
           </div>
 
-          {/* Right: CTA button */}
-          <div className="flex flex-col gap-4 items-center shrink-0 w-[321px]">
+          {/* CTA button */}
+          <div className="flex flex-col gap-4 items-center shrink-0 min-[1241px]:w-[321px]">
             <a
               href="https://cal.com/imj-mcinnis/video-call?duration=30"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] text-center transition-all duration-100 ease-out
+              className="min-[1241px]:w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] text-center transition-all duration-100 ease-out
                 shadow-[0px_4px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 hover:-translate-y-1 hover:shadow-[0px_6px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 active:translate-y-0.5 active:shadow-[0px_1px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]"
@@ -43,7 +43,7 @@ export default function FooterSection() {
               Book a consultation
             </a>
             <span className="font-mono text-[12px] text-white uppercase tracking-[0.6px]">
-              30 minutes · with Ian
+              30 minutes·with Ian and Ben
             </span>
           </div>
         </div>
@@ -67,14 +67,14 @@ export default function FooterSection() {
 
           <div className="h-px w-full bg-white opacity-20" />
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-center gap-4 min-[1241px]:flex-row min-[1241px]:justify-between">
             <span className="font-sans text-[14px] text-white leading-normal">
               © 2026 WithAI. All rights reserved.
             </span>
-            <div className="flex gap-6">
-              <a href="#" className="font-sans text-[14px] text-white leading-normal underline">Privacy Policy</a>
-              <a href="#" className="font-sans text-[14px] text-white leading-normal underline">Terms of Service</a>
-              <a href="#" className="font-sans text-[14px] text-white leading-normal underline">Cookies Settings</a>
+            <div className="flex flex-wrap gap-5 justify-center min-[1241px]:gap-6">
+              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Privacy Policy</a>
+              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Terms of Service</a>
+              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Cookies Settings</a>
             </div>
           </div>
         </div>
