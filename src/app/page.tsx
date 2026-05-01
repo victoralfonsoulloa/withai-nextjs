@@ -10,7 +10,7 @@ import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#f0eee6]">
+    <main className="flex flex-col min-h-screen bg-[#f0eee6] pt-[69px]">
       <Header />
       <HeroSection />
       <SocialProofBar />
