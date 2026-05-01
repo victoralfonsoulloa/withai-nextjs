@@ -1,6 +1,7 @@
 import DotGrid from "@/components/DotGrid";
 
 const LOGO = "https://www.figma.com/api/mcp/asset/faa1b867-fd5f-4efb-a1a2-54776c204868";
+const YC_LOGO = "https://www.figma.com/api/mcp/asset/8b3c6a98-118e-46d4-bcfd-7ecb66bf2544";
 const ICON_X = "https://www.figma.com/api/mcp/asset/d895aa94-7c5c-43bb-8fe0-b6d183bab946";
 const ICON_LINKEDIN = "https://www.figma.com/api/mcp/asset/f75d2d3a-5762-4857-a822-9918f6bfc4b8";
 const ICON_YOUTUBE = "https://www.figma.com/api/mcp/asset/5f3609e5-5989-4634-8989-d97cf4caad3f";
@@ -71,10 +72,12 @@ export default function FooterSection() {
             <span className="font-sans text-[14px] text-white leading-normal">
               © 2026 WithAI. All rights reserved.
             </span>
-            <div className="flex flex-wrap gap-5 justify-center min-[1241px]:gap-6">
-              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Privacy Policy</a>
-              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Terms of Service</a>
-              <a href="#" className="font-sans text-[12px] min-[1241px]:text-[14px] text-white leading-normal underline">Cookies Settings</a>
+            <div className="flex items-center gap-2">
+              <span className="font-mono text-[12px] text-white opacity-60 uppercase tracking-[0.6px]">Backed by</span>
+              <div className="bg-white rounded-[3px] size-6 overflow-hidden shrink-0 flex items-center justify-center">
+                <img src={YC_LOGO} alt="Y Combinator" className="size-full object-cover" />
+              </div>
+              <span className="font-sans text-[14px] text-white leading-normal">Combinator</span>
             </div>
           </div>
         </div>
