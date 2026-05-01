@@ -46,11 +46,11 @@ export default function CapabilitiesSection() {
           Build a bespoke AI system for your Fund
         </h2>
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
           {cards.map((card) => (
             <div
               key={card.label}
-              className="bg-[#f5f4ee] flex flex-col justify-between px-4 min-[1200px]:px-8 py-6 border-b border-r border-dashed border-[rgba(36,36,36,0.1)]"
+              className="bg-[#f5f4ee] flex flex-col justify-between px-4 lg:px-8 py-6 border-b border-r border-dashed border-[rgba(36,36,36,0.1)]"
             >
               <div className="flex flex-col mb-6">
                 <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px] mb-3">
