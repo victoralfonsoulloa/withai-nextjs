@@ -8,7 +8,7 @@ const founders = [
     role: "Co-founder & CEO",
     bio: "Built and invested with LLM-driven investment systems at Bridgewater Associates. Princeton Mathematics.",
     photo: IAN_PHOTO,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/imj-mcinnis/",
     borderClass: "border-t border-l border-b border-dashed border-[rgba(36,36,36,0.1)]",
   },
   {
@@ -16,7 +16,7 @@ const founders = [
     role: "Co-founder & CTO",
     bio: "Founding researcher and Chief of Staff at Sentient Labs. Princeton Electrical & Computer Engineering.",
     photo: BEN_PHOTO,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ben-finch-3a82471b5/",
     borderClass: "border border-dashed border-[rgba(36,36,36,0.1)]",
   },
 ];
@@ -71,6 +71,8 @@ export default function TeamSection() {
                 {/* LinkedIn */}
                 <a
                   href={founder.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 group self-start"
                 >
                   <span className="font-sans font-medium text-[16px] text-[#242424] group-hover:underline">

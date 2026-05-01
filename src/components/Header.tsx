@@ -44,7 +44,9 @@ export default function Header() {
       <div className="flex items-center justify-between w-full max-w-[90rem] px-[10px] min-[980px]:px-16">
         <img src={LOGO} alt="WithAI" className="size-[43px]" />
         <a
-          href="#"
+          href="https://cal.com/imj-mcinnis/video-call?duration=30"
+          target="_blank"
+          rel="noopener noreferrer"
           className="border border-[#242424] px-5 py-2 rounded-[10px] text-[16px] font-medium font-sans text-[#242424] hover:bg-[#f5f4ee] transition-colors"
         >
           Book a consultation

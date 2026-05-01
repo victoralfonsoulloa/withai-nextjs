@@ -31,14 +31,17 @@ export default function FooterSection() {
 
           {/* Right: CTA button */}
           <div className="flex flex-col gap-4 items-center shrink-0 w-[321px]">
-            <button
-              className="w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] cursor-pointer transition-all duration-100 ease-out
+            <a
+              href="https://cal.com/imj-mcinnis/video-call?duration=30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] text-center transition-all duration-100 ease-out
                 shadow-[0px_4px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 hover:-translate-y-1 hover:shadow-[0px_6px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 active:translate-y-0.5 active:shadow-[0px_1px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]"
             >
               Book a consultation
-            </button>
+            </a>
             <span className="font-mono text-[12px] text-white uppercase tracking-[0.6px]">
               30 minutes · with Ian
             </span>
