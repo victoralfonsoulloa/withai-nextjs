@@ -37,16 +37,6 @@ const cards = [
   },
 ];
 
-function CardBorder(i: number) {
-  const isLastRow = i >= 3;
-  const isLastCol = i % 3 === 2;
-  return [
-    "border-t border-l border-dashed border-[rgba(36,36,36,0.1)]",
-    isLastRow ? "border-b" : "",
-    isLastCol ? "border-r" : "",
-  ].join(" ");
-}
-
 export default function CapabilitiesSection() {
   return (
     <section className="bg-[#f0eee6] px-[10px] md:px-16 shrink-0">
@@ -56,11 +46,11 @@ export default function CapabilitiesSection() {
           Build a bespoke AI system for your Fund
         </h2>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-3">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
           {cards.map((card, i) => (
             <div
               key={card.label}
-              className={`bg-[#f5f4ee] flex flex-col justify-between px-4 min-[1200px]:px-8 py-6 ${CardBorder(i)}`}
+              className="bg-[#f5f4ee] flex flex-col justify-between px-4 min-[1200px]:px-8 py-6 border-b border-r border-dashed border-[rgba(36,36,36,0.1)]"
             >
               <div className="flex flex-col mb-6">
                 <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px] mb-3">
