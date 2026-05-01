@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SmoothScroll from "@/components/SmoothScroll";
 import { Crimson_Text, Onest, DM_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -34,7 +35,9 @@ export default function RootLayout({
       lang="en"
       className={`${crimsonText.variable} ${onest.variable} ${dmMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
