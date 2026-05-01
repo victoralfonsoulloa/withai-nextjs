@@ -40,7 +40,7 @@ const cards = [
 export default function CapabilitiesSection() {
   return (
     <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[52px] flex flex-col gap-10 items-center">
+      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[52px] flex flex-col gap-10 items-center">
 
         <h2 className="font-serif text-[36px] md:text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.08px] md:tracking-[-1.44px] max-w-[720px]">
           Build a bespoke AI system for your Fund
