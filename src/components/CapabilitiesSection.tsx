@@ -60,7 +60,7 @@ export default function CapabilitiesSection() {
           {cards.map((card, i) => (
             <div
               key={card.label}
-              className={`bg-[#f5f4ee] flex flex-col justify-between px-8 py-6 ${CardBorder(i)}`}
+              className={`bg-[#f5f4ee] flex flex-col justify-between px-4 min-[1200px]:px-8 py-6 ${CardBorder(i)}`}
             >
               <div className="flex flex-col mb-6">
                 <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px] mb-3">
