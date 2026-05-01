@@ -12,14 +12,16 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-[#f0eee6] pt-[69px]">
       <Header />
-      <HeroSection />
-      <SocialProofBar />
-      <CapabilitiesSection />
-      <IntegrationsSection />
-      <TestimonialsSection />
-      <DifferentSection />
-      <TeamSection />
-      <FooterSection />
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col">
+        <HeroSection />
+        <SocialProofBar />
+        <CapabilitiesSection />
+        <IntegrationsSection />
+        <TestimonialsSection />
+        <DifferentSection />
+        <TeamSection />
+        <FooterSection />
+      </div>
     </main>
   );
 }

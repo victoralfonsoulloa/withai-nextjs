@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 h-[69px] px-16 flex items-center border-b border-black/10 transition-transform duration-300 ease-in-out"
+      className="fixed top-0 left-0 right-0 z-50 h-[69px] flex items-center justify-center border-b border-black/10 transition-transform duration-300 ease-in-out"
       style={{
         transform: visible ? "translateY(0)" : "translateY(-100%)",
         backgroundColor: "rgba(240, 238, 230, 0.55)",
@@ -42,7 +42,7 @@ export default function Header() {
         WebkitBackdropFilter: "blur(12px)",
       }}
     >
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full max-w-[1440px] px-16">
         <img src={LOGO} alt="WithAI" className="size-[43px]" />
         <nav className="flex items-center">
           {navLinks.map((link) => (
