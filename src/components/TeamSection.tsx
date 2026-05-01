@@ -1,6 +1,6 @@
 const IAN_PHOTO = "/ian.png";
 const BEN_PHOTO = "/ben.png";
-const LINKEDIN_ICON = "https://www.figma.com/api/mcp/asset/bba17db2-fbc5-42ad-a0fb-50192770ad2a";
+const LINKEDIN_ICON = "https://www.figma.com/api/mcp/asset/e6ec36af-f3b0-4e1c-832b-b744377138ae";
 
 const founders = [
   {
@@ -24,38 +24,27 @@ const founders = [
 export default function TeamSection() {
   return (
     <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[58px] flex flex-col gap-10">
+      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-10">
         {/* Header */}
-        <div className="flex items-end justify-between">
-          <div className="flex flex-col gap-3">
-            <div className="border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] self-start">
-              <span className="relative flex size-2.5 shrink-0">
-                <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
-                <span className="relative inline-flex size-2.5 rounded-full bg-green-500" />
-              </span>
-              <span className="font-mono text-[12px] text-[rgba(26,26,24,0.77)] uppercase tracking-[0.6px]">
-                the team
-              </span>
-            </div>
-            <h2 className="font-serif text-[48px] text-[#242424] leading-[1.2] tracking-[-1.44px]">
-              Two founders. Both close to the work.
-            </h2>
-          </div>
-          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] w-[352px]">
+        <div className="flex flex-col items-center gap-4 text-center min-[980px]:flex-row min-[980px]:items-end min-[980px]:justify-between min-[980px]:text-left">
+          <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">
+            Two founders. Both close to the work.
+          </h2>
+          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] min-[980px]:w-[352px] min-[980px]:shrink-0">
             Multiplier is built by the people who&apos;ll sit across the table
             from you.
           </p>
         </div>
 
         {/* Founder cards */}
-        <div className="flex items-stretch">
+        <div className="flex flex-col min-[572px]:flex-row min-[572px]:items-stretch">
           {founders.map((founder) => (
             <div
               key={founder.name}
-              className={`flex-1 flex flex-col gap-4 p-8 ${founder.borderClass}`}
+              className={`flex-1 flex flex-col gap-4 py-5 px-4 min-[901px]:p-8 ${founder.borderClass}`}
             >
               {/* Photo */}
-              <div className="relative h-[476px] rounded-[5px] overflow-hidden shrink-0">
+              <div className="relative h-[231px] min-[572px]:h-[476px] rounded-[5px] overflow-hidden shrink-0">
                 <img
                   src={founder.photo}
                   alt={founder.name}
@@ -70,7 +59,7 @@ export default function TeamSection() {
                     {founder.role}
                   </span>
                   <div className="flex flex-col gap-4">
-                    <h3 className="font-serif text-[48px] text-[#242424] leading-[1.2] tracking-[-1.44px]">
+                    <h3 className="font-serif text-[20px] min-[572px]:text-[48px] text-[#242424] leading-[1.4] min-[572px]:leading-[1.2] tracking-[-0.6px] min-[572px]:tracking-[-1.44px]">
                       {founder.name}
                     </h3>
                     <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5]">
@@ -85,7 +74,7 @@ export default function TeamSection() {
                   className="flex items-center gap-2 group self-start"
                 >
                   <span className="font-sans font-medium text-[16px] text-[#242424] group-hover:underline">
-                    LinkedIn
+                    Linkedin
                   </span>
                   <div className="size-6 overflow-hidden shrink-0 relative">
                     <img
