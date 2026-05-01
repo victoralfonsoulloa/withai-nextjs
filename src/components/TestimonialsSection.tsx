@@ -2,20 +2,25 @@
 
 import { useRef, useState } from "react";
 
+const PHOTOS = {
+  scottHobart: "https://www.figma.com/api/mcp/asset/c9e8e4c0-468e-4349-9228-6ff7b520a7a4",
+  martinFransson: "https://www.figma.com/api/mcp/asset/ba1c9912-3468-467a-bfff-90fd6d8d4ade",
+};
+
 const testimonials = [
   {
     quote:
       "We used to spend 80% of our time gathering information and 20% acting on it. WithAI has flipped those percentages.",
     name: "Scott Hobart",
     role: "Chief Investment Officer",
-    borderClass: "border-t border-l border-b border-dashed border-[rgba(36,36,36,0.1)]",
+    photo: PHOTOS.scottHobart,
   },
   {
     quote:
-      "WithAI eliminates the need to search every 'haystack' — it surfaces the needle before you knew you needed to look.",
+      "WithAI eliminates the need to search every 'haystack' as the 'needles' are floated to the top and organized by importance, impact, and relevance for the portfolio.",
     name: "Martin Fransson, PhD",
     role: "Head of Primary Research",
-    borderClass: "border border-dashed border-[rgba(36,36,36,0.1)]",
+    photo: PHOTOS.martinFransson,
   },
 ];
 
@@ -33,7 +38,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className={`relative flex-1 flex flex-col justify-between gap-8 px-8 py-6 bg-[#f5f4ee] overflow-hidden ${testimonial.borderClass}`}
+      className="relative flex-1 flex flex-col gap-6 p-8 bg-[#f5f4ee] overflow-hidden border-t border-l border-b border-dashed border-[rgba(36,36,36,0.1)]"
       style={{
         outline: "1px dashed",
         outlineOffset: "-1px",
@@ -52,16 +57,13 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
         }}
       />
 
-      {/* Quote */}
-      <blockquote className="font-serif text-[32px] text-[#242424] leading-[1.35] tracking-[-0.96px] relative z-10">
-        &ldquo;{testimonial.quote}&rdquo;
-      </blockquote>
-
       {/* Author */}
-      <div className="flex items-center gap-3 relative z-10">
-        <div className="size-12 rounded-full bg-white shrink-0" />
+      <div className="flex flex-col gap-4 min-[980px]:flex-row min-[980px]:items-center relative z-10">
+        <div className="size-12 rounded-full overflow-hidden bg-white shrink-0">
+          <img src={testimonial.photo} alt={testimonial.name} className="size-full object-cover" />
+        </div>
         <div className="flex flex-col gap-1">
-          <span className="font-serif text-[18px] text-[#242424] leading-[1.2] tracking-[-0.54px]">
+          <span className="font-serif text-[18px] text-[#242424] leading-[1.4] tracking-[-0.54px]">
             {testimonial.name}
           </span>
           <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
@@ -69,36 +71,32 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
           </span>
         </div>
       </div>
+
+      {/* Quote */}
+      <blockquote className="font-serif text-[18px] min-[980px]:text-[32px] text-[#242424] leading-[1.4] min-[980px]:leading-[1.3] tracking-[-0.54px] min-[980px]:tracking-[-0.96px] relative z-10">
+        &ldquo;{testimonial.quote}&rdquo;
+      </blockquote>
     </div>
   );
 }
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#f0eee6] px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[58px] flex flex-col gap-10 items-center">
+    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
+      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-8 min-[980px]:gap-10 items-center">
         {/* Header */}
-        <div className="flex flex-col gap-2.5 items-center">
-          <div className="border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] self-center">
-            <span className="relative flex size-2.5 shrink-0">
-              <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-green-500" />
-            </span>
-            <span className="font-mono text-[12px] text-[rgba(26,26,24,0.77)] uppercase tracking-[0.6px]">
-              testimonials
-            </span>
-          </div>
-          <h2 className="font-serif text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.44px] mt-1">
+        <div className="flex flex-col gap-6 items-center">
+          <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">
             The work, in their words.
           </h2>
-          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] text-center max-w-[560px] mt-1">
+          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] text-center max-w-[546px]">
             Mercator Partners has been running on WithAI since day one. Their CIO and Head of
             Primary Research on what changed.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="flex items-stretch w-full">
+        <div className="flex flex-col min-[980px]:flex-row items-stretch w-full">
           {testimonials.map((t) => (
             <TestimonialCard key={t.name} testimonial={t} />
           ))}
