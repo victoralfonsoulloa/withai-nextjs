@@ -66,7 +66,7 @@ export default function CapabilitiesSection() {
               <img
                 src={card.illustration}
                 alt={card.label}
-                className="w-full"
+                className="w-full h-auto shrink-0"
               />
             </div>
           ))}
