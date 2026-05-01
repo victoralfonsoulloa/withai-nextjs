@@ -60,17 +60,19 @@ export default function CapabilitiesSection() {
           {cards.map((card, i) => (
             <div
               key={card.label}
-              className={`bg-[#f5f4ee] flex flex-col px-8 py-6 ${CardBorder(i)}`}
+              className={`bg-[#f5f4ee] flex flex-col justify-between px-8 py-6 ${CardBorder(i)}`}
             >
-              <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px] mb-3">
-                {card.label}
-              </span>
-              <h3 className="font-serif text-[24px] text-[#242424] leading-[1.4] tracking-[-0.72px] mb-4">
-                {card.title}
-              </h3>
-              <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] mb-6">
-                {card.body}
-              </p>
+              <div className="flex flex-col mb-6">
+                <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px] mb-3">
+                  {card.label}
+                </span>
+                <h3 className="font-serif text-[24px] text-[#242424] leading-[1.4] tracking-[-0.72px] mb-4">
+                  {card.title}
+                </h3>
+                <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5]">
+                  {card.body}
+                </p>
+              </div>
               <img
                 src={card.illustration}
                 alt={card.label}
