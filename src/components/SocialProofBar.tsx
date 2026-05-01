@@ -53,13 +53,16 @@ export default function SocialProofBar() {
           </span>
 
           {/* Backers list */}
-          <div className="flex flex-col min-[920px]:flex-row min-[920px]:items-center min-[920px]:flex-1 min-[920px]:gap-0">
+          <div className="flex flex-col min-[920px]:flex-row min-[920px]:items-center min-[920px]:flex-1 min-[920px]:gap-6">
             {backers.map((backer, i) => (
-              <div key={backer.name} className="min-[920px]:flex-1">
+              <div
+                key={backer.name}
+                className={`min-[920px]:flex-1 ${i < backers.length - 1 ? "min-[920px]:border-r min-[920px]:border-[rgba(36,36,36,0.1)]" : ""}`}
+              >
                 {i > 0 && (
                   <div className="min-[920px]:hidden w-full h-px bg-[rgba(36,36,36,0.1)] my-3" />
                 )}
-                <div className={`flex flex-col min-[920px]:flex-row items-center gap-1 min-[920px]:gap-3 ${i < backers.length - 1 ? "min-[920px]:border-r min-[920px]:border-[rgba(36,36,36,0.1)] min-[920px]:pr-6" : ""}`}>
+                <div className="flex flex-col min-[920px]:flex-row items-center gap-1 min-[920px]:gap-3">
                   <div className="bg-white rounded-[3px] size-8 overflow-hidden shrink-0 flex items-center justify-center">
                     <img src={backer.photo} alt={backer.name} className="size-full object-cover" />
                   </div>
