@@ -19,8 +19,8 @@ export default function HeroSection() {
         <div className="flex flex-col items-center gap-4 relative z-10 w-full">
           <div className="bg-white border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px]">
             <span className="relative flex size-[10px] shrink-0">
-              <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
-              <span className="relative inline-flex size-[10px] rounded-full bg-green-500" />
+              <span className="absolute inline-flex size-full rounded-full bg-[hsla(36,97%,63%,1)] opacity-75 animate-ping" />
+              <span className="relative inline-flex size-[10px] rounded-full bg-[hsla(36,97%,63%,1)]" />
             </span>
             <span className="font-mono text-[10px] md:text-[12px] text-[rgba(26,26,24,0.77)] uppercase tracking-[0.5px] md:tracking-[0.6px]">
               AI infrastructure for independent funds
