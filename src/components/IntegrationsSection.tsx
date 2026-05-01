@@ -3,34 +3,48 @@
 import { useEffect, useRef, useState } from "react";
 
 const LOGOS = {
-  daloopa: "https://www.figma.com/api/mcp/asset/88427707-83e5-41f4-bfdd-fc5108f5dfc2",
-  spGlobal: "https://www.figma.com/api/mcp/asset/6ee1031c-8c51-424a-9f15-f93b1960276f",
-  factset: "https://www.figma.com/api/mcp/asset/f3423161-df45-4012-b43f-ff3e3732d57b",
-  bloomberg: "https://www.figma.com/api/mcp/asset/4941e5c9-e0d8-45d7-9cf7-b1b9ed081bbe",
-  pitchbook: "https://www.figma.com/api/mcp/asset/182d86b0-3441-41df-a756-0a7c3cedb666",
-  enfusion: "https://www.figma.com/api/mcp/asset/a3117ac8-caad-4450-a6e4-5165463a739f",
-  flextrade: "https://www.figma.com/api/mcp/asset/2db5b6e5-e57b-4668-8ca4-7991cd3b001e",
-  hedgeserv: "https://www.figma.com/api/mcp/asset/6ed02320-1dc5-412a-a190-3b526449c6d2",
-  msfs: "https://www.figma.com/api/mcp/asset/ea8f1bb7-a988-4669-9604-ff0f9c0e9c58",
-  openbb: "https://www.figma.com/api/mcp/asset/e56f0bfc-0ba1-4bf5-95e1-745bf331ba80",
-  axioma: "https://www.figma.com/api/mcp/asset/071f5139-330e-409b-b94c-8e29214fda02",
-  barra: "https://www.figma.com/api/mcp/asset/db47dd93-df69-4880-9381-d775a3696768",
-  aws: "https://www.figma.com/api/mcp/asset/641370e1-f454-423d-8aad-71dbd7f0df17",
-  azure: "https://www.figma.com/api/mcp/asset/b80b4412-cccf-4293-bd8d-16a1f1d27fbe",
-  gcp: "https://www.figma.com/api/mcp/asset/156598ba-c551-4e47-947e-f461bf01b7e0",
-  snowflake: "https://www.figma.com/api/mcp/asset/904f67ee-6c98-4a37-8ba5-99f0b23d5814",
-  databricks: "https://www.figma.com/api/mcp/asset/cd86b42e-cabf-4fc2-a247-14155c10396e",
-  powerbi: "https://www.figma.com/api/mcp/asset/d70a991b-1450-4dc3-b5dd-d83e1be8b64c",
-  tableau: "https://www.figma.com/api/mcp/asset/47307deb-7577-45b9-82e5-084e6602ef2a",
-  microsoft365: "https://www.figma.com/api/mcp/asset/f6754276-9375-44fc-826f-4a9a29d557fd",
-  slack: "https://www.figma.com/api/mcp/asset/8fa215b6-8053-4260-9217-beff62c56627",
-  linear: "https://www.figma.com/api/mcp/asset/efce336d-aca8-478d-b5c2-e69ad758b960",
-  anthropic: "https://www.figma.com/api/mcp/asset/289da90d-0494-4765-8799-4a7147ad9966",
+  axioma: "https://www.figma.com/api/mcp/asset/23420559-fef3-4208-a4e0-2da52db01023",
+  barra: "https://www.figma.com/api/mcp/asset/7b143960-4d88-498d-9b82-bfd7f7c02fbd",
+  daloopa: "https://www.figma.com/api/mcp/asset/cba4dbc8-874a-41cd-b332-5d12d3482adc",
+  spGlobal: "https://www.figma.com/api/mcp/asset/da58b8f6-d38a-4b91-839c-e3b8d442bf88",
+  factset: "https://www.figma.com/api/mcp/asset/5736d0f3-37f9-43fb-adf5-75f40e4e24d7",
+  bloomberg: "https://www.figma.com/api/mcp/asset/b180fabc-c1c2-4631-a6af-85c2d2f6d03a",
+  pitchbook: "https://www.figma.com/api/mcp/asset/90301434-2c7e-4c2e-8862-e3e6060e5eaa",
+  enfusion: "https://www.figma.com/api/mcp/asset/50ef6a8a-434b-4f3a-808e-f83261ac9cbc",
+  flextrade: "https://www.figma.com/api/mcp/asset/2b1a7a47-40db-45dc-9fbf-852ae8e46539",
+  openbb: "https://www.figma.com/api/mcp/asset/d9481225-8b79-4743-8117-15873c4bd59e",
+  nasdaq: "https://www.figma.com/api/mcp/asset/94f6b7f0-723a-4b10-866f-ab6f5f67cb39",
+  datalink: "https://www.figma.com/api/mcp/asset/89c627b0-44d6-477b-9bf0-75cdae3d6d6e",
+  ravenpack: "https://www.figma.com/api/mcp/asset/474a451a-bf55-434e-8623-3cbf0c7442ad",
+  arcesium: "https://www.figma.com/api/mcp/asset/ee8ef2c4-972b-47bd-bb40-2f58aaf96d30",
+  alphasense: "https://www.figma.com/api/mcp/asset/88916ed9-7f45-4014-a4dd-b228cbe13cf9",
+  omegaPoint: "https://www.figma.com/api/mcp/asset/2e1cd1b2-3620-4fa8-b867-29c8e691c599",
+  image106: "https://www.figma.com/api/mcp/asset/c59a52e2-e400-4535-a470-6b40ba07f3ee",
+  aws: "https://www.figma.com/api/mcp/asset/4bac6ea6-9e3e-42df-bfb2-83b20c4d117a",
+  azure: "https://www.figma.com/api/mcp/asset/47ac4c5b-4a8f-4e9d-996e-165dadbce252",
+  gcp: "https://www.figma.com/api/mcp/asset/5a34931f-36b6-41e7-bb1e-7e26c77ee5fb",
+  snowflake: "https://www.figma.com/api/mcp/asset/7a607587-26da-44bc-a7d8-0e26f6512c04",
+  databricks: "https://www.figma.com/api/mcp/asset/56922cc4-a2ad-43c2-9c20-e1494e6e5a33",
+  powerbi: "https://www.figma.com/api/mcp/asset/e5578328-e23b-4fda-afd3-c68a868e563c",
+  tableau: "https://www.figma.com/api/mcp/asset/348bb8e4-0379-4a5c-9c79-1f4920482a8c",
+  microsoft365: "https://www.figma.com/api/mcp/asset/687be056-4580-4758-9dc8-c9f513eeaccd",
+  slack: "https://www.figma.com/api/mcp/asset/3404bd5f-8513-421e-b828-2c65818edcf6",
+  linear: "https://www.figma.com/api/mcp/asset/71ee288a-f96d-4275-a46e-40f8c5984732",
+  anthropic: "https://www.figma.com/api/mcp/asset/7dce5c79-a132-46dc-a82c-ebe5c6e23a93",
 };
 
 const rows = [
   {
-    category: "I — Research & Market Data",
+    category: "I — Risk Analytics",
+    title: "The exposure.",
+    description: "Factor risk, scenario analysis, attribution.",
+    logos: [
+      { name: "Axioma by SimCorp", src: LOGOS.axioma },
+      { name: "Barra by MSCI", src: LOGOS.barra },
+    ],
+  },
+  {
+    category: "II — Research & Market Data",
     title: "The reading list.",
     description: "Terminals, fundamentals, and the deep research stack.",
     logos: [
@@ -42,24 +56,20 @@ const rows = [
     ],
   },
   {
-    category: "II — Portfolio Analytics & Operations",
+    category: "III — Portfolio Analytics & Operations",
     title: "The book.",
     description: "Positions, P&L, execution, and middle-office.",
     logos: [
       { name: "Enfusion", src: LOGOS.enfusion },
       { name: "FlexTrade", src: LOGOS.flextrade },
-      { name: "Hedgeserv", src: LOGOS.hedgeserv },
-      { name: "MSFS", src: LOGOS.msfs },
       { name: "OpenBB", src: LOGOS.openbb },
-    ],
-  },
-  {
-    category: "III — Risk Analytics",
-    title: "The exposure.",
-    description: "Factor risk, scenario analysis, attribution.",
-    logos: [
-      { name: "Axioma by SimCorp", src: LOGOS.axioma },
-      { name: "Barra by MSCI", src: LOGOS.barra },
+      { name: "Nasdaq", src: LOGOS.nasdaq },
+      { name: "Datalink", src: LOGOS.datalink },
+      { name: "RavenPack", src: LOGOS.ravenpack },
+      { name: "Arcesium", src: LOGOS.arcesium },
+      { name: "AlphaSense", src: LOGOS.alphasense },
+      { name: "Omega Point", src: LOGOS.omegaPoint },
+      { name: "image 106", src: LOGOS.image106 },
     ],
   },
   {
@@ -101,11 +111,15 @@ function IntegrationRow({
   borderClass,
   isScrollActive,
   rowRef,
+  logosContainerClass = "flex flex-wrap gap-4 relative z-10 min-[980px]:flex-nowrap min-[980px]:shrink-0",
+  textMinWidthClass = "",
 }: {
   row: (typeof rows)[number];
   borderClass: string;
   isScrollActive: boolean;
   rowRef: (el: HTMLDivElement | null) => void;
+  logosContainerClass?: string;
+  textMinWidthClass?: string;
 }) {
   const mouseRef = useRef<HTMLDivElement>(null);
   const [spotlight, setSpotlight] = useState<{ x: number; y: number } | null>(null);
@@ -122,7 +136,7 @@ function IntegrationRow({
       ref={(el) => { mouseRef.current = el; rowRef(el); }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className={`relative flex items-center justify-between px-8 py-6 ${borderClass}`}
+      className={`relative flex flex-col gap-6 p-5 min-[980px]:flex-row min-[980px]:items-center min-[980px]:justify-between min-[980px]:px-8 min-[980px]:py-6 ${borderClass}`}
       style={{
         backgroundColor: isHighlighted ? "#f5f4ee" : "#f0eee6",
         outline: "1px dashed",
@@ -143,7 +157,7 @@ function IntegrationRow({
       />
 
       {/* Left: text */}
-      <div className="flex flex-col gap-4 relative z-10">
+      <div className={`flex flex-col gap-4 relative z-10 ${textMinWidthClass}`}>
         <div className="flex flex-col gap-3">
           <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
             {row.category}
@@ -158,7 +172,7 @@ function IntegrationRow({
       </div>
 
       {/* Right: logos */}
-      <div className="flex items-center gap-4 relative z-10 shrink-0">
+      <div className={logosContainerClass}>
         {row.logos.map((logo) => (
           <img
             key={logo.name}
@@ -202,27 +216,14 @@ export default function IntegrationsSection() {
   }, []);
 
   return (
-    <section className="bg-[#f0eee6] px-16 shrink-0">
+    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
       <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[52px] flex flex-col gap-10">
         {/* Header */}
-        <div className="flex items-end justify-between">
-          <div className="flex flex-col gap-3">
-            <div className="border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] self-start">
-              <span className="relative flex size-2.5 shrink-0">
-                <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
-                <span className="relative inline-flex size-2.5 rounded-full bg-green-500" />
-              </span>
-              <span className="font-mono text-[12px] text-[rgba(26,26,24,0.77)] uppercase tracking-[0.6px]">
-                Integrations
-              </span>
-            </div>
-            <h2 className="font-serif text-[48px] text-[#242424] leading-[1.2] tracking-[-1.44px]">
-              Twenty-three tools.
-              <br />
-              One workflow.
-            </h2>
-          </div>
-          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] w-[374px]">
+        <div className="flex flex-col items-center gap-3 text-center min-[980px]:flex-row min-[980px]:items-end min-[980px]:justify-between min-[980px]:text-left">
+          <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">
+            Integrate everything
+          </h2>
+          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] min-[980px]:w-[374px] min-[980px]:shrink-0">
             Connected once, governed properly, kept in sync — so the system
             thinks across your stack the way your team already does.
           </p>
@@ -241,9 +242,21 @@ export default function IntegrationsSection() {
                 "border-t border-l",
                 i === rows.length - 1 ? "border-b border-r" : "border-r",
               ].join(" ")}
+              logosContainerClass={
+                i === 2
+                  ? "flex flex-wrap gap-4 relative z-10 max-w-[624px]"
+                  : "flex flex-wrap gap-4 relative z-10 min-[980px]:flex-nowrap min-[980px]:shrink-0"
+              }
+              textMinWidthClass={i === 2 ? "min-w-[330px]" : ""}
             />
           ))}
         </div>
+
+        {/* Footer */}
+        <p className="font-sans font-normal text-[14px] min-[980px]:text-[16px] text-[#525252] leading-[1.5] text-center">
+          <span className="font-semibold text-[#242424]">Don&apos;t see something?</span>{" "}
+          If your firm runs on it, we&apos;ll connect to it. Custom integrations are part of the partnership, not a line item.
+        </p>
       </div>
     </section>
   );
