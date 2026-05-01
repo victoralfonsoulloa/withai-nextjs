@@ -22,10 +22,10 @@ function QuoteIcon() {
 export default function SocialProofBar() {
   return (
     <section className="bg-[#f0eee6] px-[10px] md:px-16 shrink-0">
-      <div className="bg-[#f5f4ee] border border-[rgba(36,36,36,0.1)] py-5 md:px-8 md:py-6 flex flex-col min-[1351px]:flex-row min-[1351px]:items-center">
+      <div className="bg-[#f5f4ee] border border-[rgba(36,36,36,0.1)] py-5 md:px-8 md:py-6 flex flex-col lg:flex-row lg:items-center">
 
         {/* Testimonial — always on top */}
-        <div className="flex gap-2.5 items-start px-6 md:px-0 min-[1351px]:max-w-[440px] min-[1351px]:shrink-0">
+        <div className="flex gap-2.5 items-start px-6 md:px-0 lg:max-w-[440px] lg:shrink-0">
           <div className="flex flex-col gap-2 items-start">
             <QuoteIcon />
             <p className="font-sans font-normal text-[14px] text-[#242424] leading-[1.5]">
@@ -41,13 +41,13 @@ export default function SocialProofBar() {
         </div>
 
         {/* Horizontal divider (mobile + tablet) */}
-        <div className="min-[1351px]:hidden w-full h-px bg-[rgba(36,36,36,0.1)] my-5" />
+        <div className="lg:hidden w-full h-px bg-[rgba(36,36,36,0.1)] my-5" />
 
         {/* Vertical divider (desktop only) */}
-        <div className="hidden min-[1351px]:block w-px h-[34px] bg-[rgba(36,36,36,0.1)] shrink-0 mx-8" />
+        <div className="hidden lg:block w-px h-[34px] bg-[rgba(36,36,36,0.1)] shrink-0 mx-8" />
 
         {/* Backed by — always below quote */}
-        <div className="flex flex-col min-[920px]:flex-row min-[920px]:items-center min-[920px]:gap-6 min-[1351px]:flex-1 px-6 md:px-0">
+        <div className="flex flex-col min-[920px]:flex-row min-[920px]:items-center min-[920px]:gap-6 lg:flex-1 px-6 md:px-0">
           <span className="font-mono text-[12px] text-[#7a7870] uppercase tracking-[0.6px] whitespace-nowrap shrink-0 text-center min-[920px]:text-left mb-3 min-[920px]:mb-0">
             Backed by
           </span>
