@@ -42,7 +42,7 @@ export default function Header() {
         WebkitBackdropFilter: "blur(12px)",
       }}
     >
-      <div className="flex items-center justify-between w-full max-w-[80rem] px-16">
+      <div className="flex items-center justify-between w-full max-w-[90rem] px-16">
         <img src={LOGO} alt="WithAI" className="size-[43px]" />
         <nav className="flex items-center">
           {navLinks.map((link) => (

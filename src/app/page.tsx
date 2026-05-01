@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-[#f0eee6] pt-[69px]">
       <Header />
-      <div className="w-full max-w-[80rem] mx-auto flex flex-col">
+      <div className="w-full max-w-[90rem] mx-auto flex flex-col">
         <HeroSection />
         <SocialProofBar />
         <CapabilitiesSection />
