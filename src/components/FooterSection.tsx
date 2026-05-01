@@ -36,7 +36,7 @@ export default function FooterSection() {
               href="https://cal.com/imj-mcinnis/video-call?duration=30"
               target="_blank"
               rel="noopener noreferrer"
-              className="min-[1241px]:w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] text-center transition-all duration-100 ease-out
+              className="min-[1241px]:w-full bg-[#fcb344] border border-[#fcb344] rounded-[10px] px-6 py-3 font-sans font-medium text-[16px] text-[#242424] leading-[1.5] text-center touch-manipulation transition-all duration-100 ease-out
                 shadow-[0px_4px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 hover:-translate-y-1 hover:shadow-[0px_6px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]
                 active:translate-y-0.5 active:shadow-[0px_1px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)]"

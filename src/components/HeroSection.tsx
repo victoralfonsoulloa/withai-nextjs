@@ -41,7 +41,7 @@ export default function HeroSection() {
             href="https://cal.com/imj-mcinnis/video-call?duration=30"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#fcb344] border border-[#fcb344] text-[#242424] px-6 py-3 rounded-[10px] font-sans font-medium text-[16px] text-center shadow-[0px_3px_6.25px_rgba(0,0,0,0.11)] hover:brightness-105 transition-all duration-150"
+            className="bg-[#fcb344] border border-[#fcb344] text-[#242424] px-6 py-3 rounded-[10px] font-sans font-medium text-[16px] text-center shadow-[0px_3px_6.25px_rgba(0,0,0,0.11)] hover:brightness-105 active:scale-[0.97] active:brightness-95 touch-manipulation transition-all duration-150"
           >
             Book a consultation
           </a>
