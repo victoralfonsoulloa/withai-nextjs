@@ -1,6 +1,6 @@
 # WithAI — Marketing Site
 
-Landing page for [WithAI](https://withai.co), an AI infrastructure platform for independent asset managers.
+Landing page for [WithAI](https://withai.co\), an AI infrastructure platform for independent asset managers.
 
 ## Stack
 

@@ -83,7 +83,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
 export default function TestimonialsSection() {
   return (
     <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-8 min-[980px]:gap-10 items-center">
+      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-8 min-[980px]:gap-10 items-center">
         {/* Header */}
         <div className="flex flex-col gap-6 items-center">
           <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">

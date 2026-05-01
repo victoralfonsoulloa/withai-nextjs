@@ -217,7 +217,7 @@ export default function IntegrationsSection() {
 
   return (
     <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[52px] flex flex-col gap-10">
+      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[52px] flex flex-col gap-10">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center min-[980px]:flex-row min-[980px]:items-end min-[980px]:justify-between min-[980px]:text-left">
           <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">

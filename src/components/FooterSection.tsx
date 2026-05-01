@@ -1,16 +1,16 @@
 import DotGrid from "@/components/DotGrid";
 
-const LOGO = "https://www.figma.com/api/mcp/asset/faa1b867-fd5f-4efb-a1a2-54776c204868";
+const LOGO = "https://www.figma.com/api/mcp/asset/0bddfc70-a032-43ea-9f1e-43fa788d9a31";
 const YC_LOGO = "https://www.figma.com/api/mcp/asset/8b3c6a98-118e-46d4-bcfd-7ecb66bf2544";
-const ICON_X = "https://www.figma.com/api/mcp/asset/d895aa94-7c5c-43bb-8fe0-b6d183bab946";
-const ICON_LINKEDIN = "https://www.figma.com/api/mcp/asset/f75d2d3a-5762-4857-a822-9918f6bfc4b8";
-const ICON_YOUTUBE = "https://www.figma.com/api/mcp/asset/5f3609e5-5989-4634-8989-d97cf4caad3f";
+const ICON_X = "https://www.figma.com/api/mcp/asset/4476e066-f883-43d0-949e-441fa0839899";
+const ICON_LINKEDIN = "https://www.figma.com/api/mcp/asset/fcae01ab-045f-4a95-b90e-26b2a55a47b4";
+const ICON_YOUTUBE = "https://www.figma.com/api/mcp/asset/07d56f78-ee4a-4599-8e13-1e624a940004";
 
 export default function FooterSection() {
   return (
     <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="relative bg-[#242424] border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 pt-[52px] pb-[31px] flex flex-col gap-10 overflow-hidden">
-        <DotGrid variant="dark" />
+      <div className="relative bg-[#f0eee6] border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 pt-[52px] pb-[31px] flex flex-col gap-10 overflow-hidden">
+        <DotGrid variant="light" />
 
         {/* CTA row */}
         <div className="flex flex-col items-center gap-4 relative z-10 min-[1241px]:flex-row min-[1241px]:items-end min-[1241px]:justify-between">
@@ -25,7 +25,7 @@ export default function FooterSection() {
                 AI infrastructure for independent funds
               </span>
             </div>
-            <h2 className="font-serif text-[40px] min-[1241px]:text-[56px] text-white leading-[1.2] tracking-[-1.2px] min-[1241px]:tracking-[-1.68px] max-w-[662px] min-[1241px]:max-w-none">
+            <h2 className="font-serif text-[40px] min-[1241px]:text-[56px] text-[#242424] leading-[1.2] tracking-[-1.2px] min-[1241px]:tracking-[-1.68px] max-w-[662px] min-[1241px]:max-w-none">
               If you want to see what your firm looks like one year in the future
             </h2>
           </div>
@@ -43,7 +43,7 @@ export default function FooterSection() {
             >
               Book a consultation
             </a>
-            <span className="font-mono text-[12px] text-white uppercase tracking-[0.6px]">
+            <span className="font-mono text-[12px] text-[#242424] uppercase tracking-[0.6px]">
               30 minutes·with Ian and Ben
             </span>
           </div>
@@ -66,18 +66,18 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <div className="h-px w-full bg-white opacity-20" />
+          <div className="h-px w-full bg-[rgba(36,36,36,0.1)]" />
 
           <div className="flex flex-col items-center gap-4 min-[1241px]:flex-row min-[1241px]:justify-between">
-            <span className="font-sans text-[14px] text-white leading-normal">
+            <span className="font-sans text-[14px] text-[#242424] leading-normal">
               © 2026 WithAI. All rights reserved.
             </span>
             <div className="flex items-center gap-2">
-              <span className="font-mono text-[12px] text-white opacity-60 uppercase tracking-[0.6px]">Backed by</span>
+              <span className="font-mono text-[12px] text-[#7a7870] uppercase tracking-[0.6px]">Backed by</span>
               <div className="bg-white rounded-[3px] size-6 overflow-hidden shrink-0 flex items-center justify-center">
                 <img src={YC_LOGO} alt="Y Combinator" className="size-full object-cover" />
               </div>
-              <span className="font-sans text-[14px] text-white leading-normal">Combinator</span>
+              <span className="font-sans text-[14px] text-[#242424] leading-normal">Combinator</span>
             </div>
           </div>
         </div>
