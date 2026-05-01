@@ -47,7 +47,7 @@ export default function CapabilitiesSection() {
         </h2>
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 min-[960px]:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
-          {cards.map((card, i) => (
+          {cards.map((card) => (
             <div
               key={card.label}
               className="bg-[#f5f4ee] flex flex-col justify-between px-4 min-[1200px]:px-8 py-6 border-b border-r border-dashed border-[rgba(36,36,36,0.1)]"
