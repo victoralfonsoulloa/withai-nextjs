@@ -21,7 +21,7 @@ function QuoteIcon() {
 
 export default function SocialProofBar() {
   return (
-    <section className="bg-[#f0eee6] px-[10px] md:px-16 shrink-0">
+    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
       <div className="bg-[#f5f4ee] border border-[rgba(36,36,36,0.1)] py-5 md:px-8 md:py-6 flex flex-col min-[1442px]:flex-row min-[1442px]:items-center">
 
         {/* Testimonial — always on top */}

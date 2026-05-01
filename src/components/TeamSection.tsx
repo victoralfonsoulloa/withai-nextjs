@@ -23,7 +23,7 @@ const founders = [
 
 export default function TeamSection() {
   return (
-    <section className="bg-[#f0eee6] px-16 shrink-0">
+    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
       <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[58px] flex flex-col gap-10">
         {/* Header */}
         <div className="flex items-end justify-between">

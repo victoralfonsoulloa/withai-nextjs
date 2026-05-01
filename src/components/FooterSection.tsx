@@ -7,7 +7,7 @@ const ICON_YOUTUBE = "https://www.figma.com/api/mcp/asset/5f3609e5-5989-4634-898
 
 export default function FooterSection() {
   return (
-    <section className="bg-[#f0eee6] px-16 shrink-0">
+    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
       <div className="relative bg-[#242424] border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 pt-[52px] pb-[31px] flex flex-col gap-10 overflow-hidden">
         <DotGrid variant="dark" />
 
