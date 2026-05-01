@@ -46,7 +46,7 @@ export default function CapabilitiesSection() {
           Build a bespoke AI system for your Fund
         </h2>
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 min-[980px]:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 min-[981px]:grid-cols-3 border-t border-l border-dashed border-[rgba(36,36,36,0.1)]">
           {cards.map((card) => (
             <div
               key={card.label}
