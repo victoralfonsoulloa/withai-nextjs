@@ -34,7 +34,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className="relative flex flex-1 flex-col gap-6 overflow-hidden border-t border-b border-l border-dashed border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] p-8"
+      className="relative flex flex-1 flex-col gap-6 overflow-hidden border-r border-b border-dashed border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] p-8"
       style={{
         outline: "1px dashed",
         outlineOffset: "-1px",
@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Cards */}
-        <div className="flex w-full flex-col items-stretch min-[980px]:flex-row">
+        <div className="flex w-full flex-col items-stretch border-t border-l border-dashed border-[rgba(36,36,36,0.1)] min-[980px]:flex-row">
           {testimonials.map((t) => (
             <TestimonialCard key={t.name} testimonial={t} />
           ))}
