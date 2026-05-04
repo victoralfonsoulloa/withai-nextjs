@@ -33,7 +33,7 @@ export default function FooterSection() {
               href="https://cal.com/imj-mcinnis/video-call?duration=30"
               target="_blank"
               rel="noopener noreferrer"
-              className="touch-manipulation rounded-[10px] border border-[#fcb344] bg-[#fcb344] px-6 py-3 text-center font-sans text-[16px] leading-[1.5] font-medium text-[#242424] shadow-[0px_4px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)] transition-all duration-100 ease-out hover:-translate-y-1 hover:shadow-[0px_6px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)] active:translate-y-0.5 active:shadow-[0px_1px_0px_#c8901a,inset_0px_4px_6.5px_rgba(255,255,255,0.63)] min-[1241px]:w-full"
+              className="touch-manipulation rounded-[10px] border border-[#fcb344] bg-[#fcb344] px-6 py-3 text-center font-sans text-[16px] font-medium text-[#242424] shadow-[0px_3px_6.25px_rgba(0,0,0,0.11)] transition-all duration-150 hover:brightness-105 active:scale-[0.97] active:brightness-95 min-[1241px]:w-full"
             >
               Book a consultation
             </a>
