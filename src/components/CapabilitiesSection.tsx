@@ -3,37 +3,37 @@ const cards = [
     label: "Engineering",
     title: "Harness the latest agents",
     body: "Securely harness Claude Code and other state of the art agents to do work for your firm.",
-    illustration: "/illustrations/engineering.svg",
+    illustration: "/illustrations/engineering.png",
   },
   {
     label: "Workflows",
     title: "Encode your firm's processes",
     body: "The way your team builds a thesis, runs a screen, prepares for earnings – drilled into your AI.",
-    illustration: "/illustrations/workflows.svg",
+    illustration: "/illustrations/workflows.png",
   },
   {
     label: "Research",
     title: "Automated research",
     body: "Daily coverage of every name on your watchlist. Your docs update with prints, guidance and filings the moment they cross.",
-    illustration: "/illustrations/research.svg",
+    illustration: "/illustrations/research.png",
   },
   {
     label: "Security",
     title: "Hedge-fund-grade infrastructure",
     body: "Tenant isolation. No training on your data. Controls treated as a design constraint from day one — not a compliance afterthought.",
-    illustration: "/illustrations/security.svg",
+    illustration: "/illustrations/security.png",
   },
   {
     label: "Data",
     title: "Organize your data",
     body: "Agents that maintain your file structure, enforce your ontology, and keep the archive queryable — without anyone playing librarian.",
-    illustration: "/illustrations/data.svg",
+    illustration: "/illustrations/data.png",
   },
   {
     label: "Enablement",
     title: "Training & governance",
     body: "Seminars, playbooks, and direct support — so AI gets used well across the firm, not just by the people who already love it.",
-    illustration: "/illustrations/enablement.svg",
+    illustration: "/illustrations/enablement.png",
   },
 ];
 
