@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 const IAN_PHOTO = "/ian.png";
 const BEN_PHOTO = "/ben.png";
-const LINKEDIN_ICON = "https://www.figma.com/api/mcp/asset/e6ec36af-f3b0-4e1c-832b-b744377138ae";
+const LINKEDIN_ICON = "/icons/icon-linkedin-founders.svg";
 
 const founders = [
   {
@@ -45,10 +47,11 @@ export default function TeamSection() {
             >
               {/* Photo */}
               <div className="relative h-[231px] min-[572px]:h-[476px] rounded-[5px] overflow-hidden shrink-0">
-                <img
+                <Image
                   src={founder.photo}
                   alt={founder.name}
-                  className="absolute inset-0 size-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 
@@ -79,11 +82,7 @@ export default function TeamSection() {
                     Linkedin
                   </span>
                   <div className="size-6 overflow-hidden shrink-0 relative">
-                    <img
-                      src={LINKEDIN_ICON}
-                      alt=""
-                      className="absolute inset-0 size-full object-contain"
-                    />
+                    <Image src={LINKEDIN_ICON} alt="" width={24} height={24} className="object-contain" />
                   </div>
                 </a>
               </div>

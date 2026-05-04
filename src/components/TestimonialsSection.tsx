@@ -1,11 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
-
-const PHOTOS = {
-  scottHobart: "https://www.figma.com/api/mcp/asset/c9e8e4c0-468e-4349-9228-6ff7b520a7a4",
-  martinFransson: "https://www.figma.com/api/mcp/asset/ba1c9912-3468-467a-bfff-90fd6d8d4ade",
-};
 
 const testimonials = [
   {
@@ -13,14 +9,14 @@ const testimonials = [
       "We used to spend 80% of our time gathering information and 20% acting on it. WithAI has flipped those percentages.",
     name: "Scott Hobart",
     role: "Chief Investment Officer",
-    photo: PHOTOS.scottHobart,
+    photo: "/avatars/scott-hobart.webp",
   },
   {
     quote:
       "WithAI eliminates the need to search every 'haystack' as the 'needles' are floated to the top and organized by importance, impact, and relevance for the portfolio.",
     name: "Martin Fransson, PhD",
     role: "Head of Primary Research",
-    photo: PHOTOS.martinFransson,
+    photo: "/avatars/martin-fransson.webp",
   },
 ];
 
@@ -59,8 +55,8 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
 
       {/* Author */}
       <div className="flex flex-col gap-4 min-[980px]:flex-row min-[980px]:items-center relative z-10">
-        <div className="size-12 rounded-full overflow-hidden bg-white shrink-0">
-          <img src={testimonial.photo} alt={testimonial.name} className="size-full object-cover" />
+        <div className="relative size-12 rounded-full overflow-hidden bg-white shrink-0">
+          <Image src={testimonial.photo} alt={testimonial.name} fill className="object-cover" />
         </div>
         <div className="flex flex-col gap-1">
           <span className="font-serif text-[18px] text-[#242424] leading-[1.4] tracking-[-0.54px]">

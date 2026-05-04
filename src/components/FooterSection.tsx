@@ -1,10 +1,7 @@
+import Image from "next/image";
 import DotGrid from "@/components/DotGrid";
 
-const LOGO = "https://www.figma.com/api/mcp/asset/0bddfc70-a032-43ea-9f1e-43fa788d9a31";
-const YC_LOGO = "https://www.figma.com/api/mcp/asset/8b3c6a98-118e-46d4-bcfd-7ecb66bf2544";
-const ICON_X = "https://www.figma.com/api/mcp/asset/4476e066-f883-43d0-949e-441fa0839899";
-const ICON_LINKEDIN = "https://www.figma.com/api/mcp/asset/fcae01ab-045f-4a95-b90e-26b2a55a47b4";
-const ICON_YOUTUBE = "https://www.figma.com/api/mcp/asset/07d56f78-ee4a-4599-8e13-1e624a940004";
+const YC_LOGO = "/logos/yc-logo.svg";
 
 export default function FooterSection() {
   return (
@@ -52,16 +49,16 @@ export default function FooterSection() {
         {/* Footer bar */}
         <div className="flex flex-col gap-6 relative z-10">
           <div className="flex items-center justify-between">
-            <img src={LOGO} alt="WithAI" className="size-[43px] object-contain shrink-0" />
+            <Image src="/logos/withai-logo.svg" alt="WithAI" width={43} height={43} className="shrink-0" />
             <div className="flex items-center gap-3">
-              <a href="#" className="relative size-6 shrink-0 overflow-hidden block">
-                <img src={ICON_X} alt="X (Twitter)" className="absolute inset-0 size-full object-contain" />
+              <a href="#" className="block shrink-0">
+                <Image src="/icons/icon-x.svg" alt="X (Twitter)" width={24} height={24} />
               </a>
-              <a href="#" className="relative size-6 shrink-0 overflow-hidden block">
-                <img src={ICON_LINKEDIN} alt="LinkedIn" className="absolute inset-0 size-full object-contain" />
+              <a href="#" className="block shrink-0">
+                <Image src="/icons/icon-linkedin.svg" alt="LinkedIn" width={24} height={24} />
               </a>
-              <a href="#" className="relative size-6 shrink-0 overflow-hidden block">
-                <img src={ICON_YOUTUBE} alt="YouTube" className="absolute inset-0 size-full object-contain" />
+              <a href="#" className="block shrink-0">
+                <Image src="/icons/icon-youtube.svg" alt="YouTube" width={24} height={24} />
               </a>
             </div>
           </div>
@@ -74,8 +71,8 @@ export default function FooterSection() {
             </span>
             <div className="flex items-center gap-2">
               <span className="font-mono text-[12px] text-[#7a7870] uppercase tracking-[0.6px]">Backed by</span>
-              <div className="bg-white rounded-[3px] size-6 overflow-hidden shrink-0 flex items-center justify-center">
-                <img src={YC_LOGO} alt="Y Combinator" className="size-full object-cover" />
+              <div className="relative bg-white rounded-[3px] size-6 overflow-hidden shrink-0">
+                <Image src={YC_LOGO} alt="Y Combinator" fill className="object-cover" />
               </div>
               <span className="font-sans text-[14px] text-[#242424] leading-normal">Combinator</span>
             </div>

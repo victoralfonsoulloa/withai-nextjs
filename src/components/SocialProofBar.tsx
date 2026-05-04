@@ -1,14 +1,11 @@
-const YC_LOGO =
-  "https://www.figma.com/api/mcp/asset/8b3c6a98-118e-46d4-bcfd-7ecb66bf2544";
-const GREG_PHOTO =
-  "https://www.figma.com/api/mcp/asset/dd7a0f06-0683-46cc-96ff-b1f42101017c";
-const KAREN_PHOTO =
-  "https://www.figma.com/api/mcp/asset/1fa6cf46-d90e-440a-8880-b43a5ec31b01";
+import Image from "next/image";
+
+const YC_LOGO = "/logos/yc-logo.svg";
 
 const backers = [
-  { photo: YC_LOGO, name: "Y Combinator", role: "Batch F26" },
-  { photo: GREG_PHOTO, name: "Greg Jensen", role: "Co-CIO, Bridgewater" },
-  { photo: KAREN_PHOTO, name: "Karen Karniol-Tambour", role: "Co-CIO, Bridgewater" },
+  { photo: YC_LOGO, name: "Y Combinator", role: "Batch F26", isExternal: true },
+  { photo: "/avatars/greg-jensen.png", name: "Greg Jensen", role: "Co-CIO, Bridgewater", isExternal: false },
+  { photo: "/avatars/karen-karniol.png", name: "Karen Karniol-Tambour", role: "Co-CIO, Bridgewater", isExternal: false },
 ];
 
 function QuoteIcon() {
@@ -63,8 +60,8 @@ export default function SocialProofBar() {
                   <div className="min-[920px]:hidden w-full h-px bg-[rgba(36,36,36,0.1)] my-3" />
                 )}
                 <div className="flex flex-col min-[920px]:flex-row items-center gap-1 min-[920px]:gap-3">
-                  <div className="bg-white rounded-[3px] size-8 overflow-hidden shrink-0 flex items-center justify-center">
-                    <img src={backer.photo} alt={backer.name} className="size-full object-cover" />
+                  <div className="relative bg-white rounded-[3px] size-8 overflow-hidden shrink-0 flex items-center justify-center">
+                    <Image src={backer.photo} alt={backer.name} fill className="object-cover" />
                   </div>
                   <div className="flex flex-col items-center min-[920px]:items-start text-center min-[920px]:text-left">
                     <span className="font-sans font-normal text-[14px] text-[#1a1a18] leading-[1.5]">{backer.name}</span>

@@ -1,8 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
-const LOGO = "https://www.figma.com/api/mcp/asset/ed3221b6-9616-4032-b2d3-b168358139fb";
 
 export default function Header() {
   const [visible, setVisible] = useState(true);
@@ -42,7 +41,7 @@ export default function Header() {
       }}
     >
       <div className="flex items-center justify-between w-full max-w-[90rem] px-[10px] min-[980px]:px-16">
-        <img src={LOGO} alt="WithAI" className="size-[43px]" />
+        <Image src="/logos/withai-logo.svg" alt="WithAI" width={43} height={43} />
         <a
           href="https://cal.com/imj-mcinnis/video-call?duration=30"
           target="_blank"
