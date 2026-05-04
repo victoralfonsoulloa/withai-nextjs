@@ -39,26 +39,26 @@ const cards = [
 
 export default function CapabilitiesSection() {
   return (
-    <section className="shrink-0 bg-background px-[10px] min-[980px]:px-16">
-      <div className="flex flex-col items-center gap-10 border-t border-r border-l border-border px-4 py-[52px] min-[980px]:px-8">
-        <h2 className="max-w-[720px] text-center font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-ink md:text-[48px] md:tracking-[-1.44px]">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col items-center gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-4 py-[52px] min-[980px]:px-8">
+        <h2 className="max-w-[720px] text-center font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-[#242424] md:text-[48px] md:tracking-[-1.44px]">
           Build a bespoke AI system for your Fund
         </h2>
 
-        <div className="grid w-full grid-cols-1 border-t border-l border-dashed border-border min-[640px]:grid-cols-2 min-[961px]:grid-cols-3">
+        <div className="grid w-full grid-cols-1 border-t border-l border-dashed border-[rgba(36,36,36,0.1)] min-[640px]:grid-cols-2 min-[961px]:grid-cols-3">
           {cards.map((card) => (
             <div
               key={card.label}
-              className="flex flex-col justify-between border-r border-b border-dashed border-border bg-background-2 px-4 py-6 lg:px-8"
+              className="flex flex-col justify-between border-r border-b border-dashed border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] px-4 py-6 lg:px-8"
             >
               <div className="mb-6 flex flex-col">
-                <span className="mb-3 font-mono text-[12px] tracking-[0.6px] text-grey uppercase">
+                <span className="mb-3 font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
                   {card.label}
                 </span>
-                <h3 className="mb-4 font-serif text-[24px] leading-[1.4] tracking-[-0.72px] text-ink">
+                <h3 className="mb-4 font-serif text-[24px] leading-[1.4] tracking-[-0.72px] text-[#242424]">
                   {card.title}
                 </h3>
-                <p className="font-sans text-[16px] leading-[1.5] font-normal text-grey">
+                <p className="font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
                   {card.body}
                 </p>
               </div>

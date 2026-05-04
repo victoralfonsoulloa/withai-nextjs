@@ -46,7 +46,7 @@ export default function Header() {
           href="https://cal.com/imj-mcinnis/video-call?duration=30"
           target="_blank"
           rel="noopener noreferrer"
-          className="touch-manipulation rounded-[10px] border border-ink px-5 py-2 font-sans text-[16px] font-medium text-ink transition-all duration-150 hover:bg-background-2 active:scale-[0.97] active:bg-[#e8e6de]"
+          className="touch-manipulation rounded-[10px] border border-[#242424] px-5 py-2 font-sans text-[16px] font-medium text-[#242424] transition-all duration-150 hover:bg-[#f5f4ee] active:scale-[0.97] active:bg-[#e8e6de]"
         >
           Book a consultation
         </a>

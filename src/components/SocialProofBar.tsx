@@ -31,13 +31,13 @@ function QuoteIcon() {
 
 export default function SocialProofBar() {
   return (
-    <section className="shrink-0 bg-background px-[10px] min-[980px]:px-16">
-      <div className="flex flex-col border border-border bg-background-2 py-5 min-[1442px]:flex-row min-[1442px]:items-center md:px-8 md:py-6">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col border border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] py-5 min-[1442px]:flex-row min-[1442px]:items-center md:px-8 md:py-6">
         {/* Testimonial — always on top */}
         <div className="flex items-start gap-2.5 px-6 min-[1442px]:max-w-[440px] min-[1442px]:shrink-0 md:px-0">
           <div className="flex flex-col items-start gap-2">
             <QuoteIcon />
-            <p className="font-sans text-[14px] leading-[1.5] font-normal text-ink">
+            <p className="font-sans text-[14px] leading-[1.5] font-normal text-[#242424]">
               We used to spend 80% of our time gathering information and 20% acting on it. WithAI
               has flipped those percentages.
             </p>
@@ -45,10 +45,10 @@ export default function SocialProofBar() {
               <span className="font-sans text-[14px] leading-[1.5] font-normal text-[#1a1a18]">
                 Scott Hobart
               </span>
-              <span className="font-sans text-[12px] leading-[1.1] font-medium text-grey-muted">
+              <span className="font-sans text-[12px] leading-[1.1] font-medium text-[#7a7870]">
                 ·
               </span>
-              <span className="font-sans text-[12px] leading-[1.1] font-medium text-grey-muted">
+              <span className="font-sans text-[12px] leading-[1.1] font-medium text-[#7a7870]">
                 CIO, Mercator Partners
               </span>
             </div>
@@ -56,14 +56,14 @@ export default function SocialProofBar() {
         </div>
 
         {/* Horizontal divider (mobile + tablet) */}
-        <div className="my-5 h-px w-full bg-border min-[1442px]:hidden" />
+        <div className="my-5 h-px w-full bg-[rgba(36,36,36,0.1)] min-[1442px]:hidden" />
 
         {/* Vertical divider (desktop only) */}
-        <div className="mx-8 hidden h-[34px] w-px shrink-0 bg-border min-[1442px]:block" />
+        <div className="mx-8 hidden h-[34px] w-px shrink-0 bg-[rgba(36,36,36,0.1)] min-[1442px]:block" />
 
         {/* Backed by — always below quote */}
         <div className="flex flex-col px-6 min-[920px]:flex-row min-[920px]:items-center min-[920px]:gap-6 min-[1442px]:flex-1 md:px-0">
-          <span className="mb-3 shrink-0 text-center font-mono text-[12px] tracking-[0.6px] whitespace-nowrap text-grey-muted uppercase min-[920px]:mb-0 min-[920px]:text-left">
+          <span className="mb-3 shrink-0 text-center font-mono text-[12px] tracking-[0.6px] whitespace-nowrap text-[#7a7870] uppercase min-[920px]:mb-0 min-[920px]:text-left">
             Backed by
           </span>
 
@@ -72,9 +72,11 @@ export default function SocialProofBar() {
             {backers.map((backer, i) => (
               <div
                 key={backer.name}
-                className={`min-[920px]:flex-1 ${i < backers.length - 1 ? "min-[920px]:border-r min-[920px]:border-border" : ""}`}
+                className={`min-[920px]:flex-1 ${i < backers.length - 1 ? "min-[920px]:border-r min-[920px]:border-[rgba(36,36,36,0.1)]" : ""}`}
               >
-                {i > 0 && <div className="my-3 h-px w-full bg-border min-[920px]:hidden" />}
+                {i > 0 && (
+                  <div className="my-3 h-px w-full bg-[rgba(36,36,36,0.1)] min-[920px]:hidden" />
+                )}
                 <div className="flex flex-col items-center gap-1 min-[920px]:flex-row min-[920px]:gap-3">
                   <div className="relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-[3px] bg-white">
                     <Image src={backer.photo} alt={backer.name} fill className="object-cover" />
@@ -83,7 +85,7 @@ export default function SocialProofBar() {
                     <span className="font-sans text-[14px] leading-[1.5] font-normal text-[#1a1a18]">
                       {backer.name}
                     </span>
-                    <span className="font-sans text-[12px] leading-[1.1] font-medium text-grey-muted">
+                    <span className="font-sans text-[12px] leading-[1.1] font-medium text-[#7a7870]">
                       {backer.role}
                     </span>
                   </div>

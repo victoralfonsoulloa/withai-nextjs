@@ -34,7 +34,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className="relative flex flex-1 flex-col gap-6 overflow-hidden border-t border-b border-l border-dashed border-border bg-background-2 p-8"
+      className="relative flex flex-1 flex-col gap-6 overflow-hidden border-t border-b border-l border-dashed border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] p-8"
       style={{
         outline: "1px dashed",
         outlineOffset: "-1px",
@@ -59,17 +59,17 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
           <Image src={testimonial.photo} alt={testimonial.name} fill className="object-cover" />
         </div>
         <div className="flex flex-col gap-1">
-          <span className="font-serif text-[18px] leading-[1.4] tracking-[-0.54px] text-ink">
+          <span className="font-serif text-[18px] leading-[1.4] tracking-[-0.54px] text-[#242424]">
             {testimonial.name}
           </span>
-          <span className="font-mono text-[12px] tracking-[0.6px] text-grey uppercase">
+          <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
             {testimonial.role}
           </span>
         </div>
       </div>
 
       {/* Quote */}
-      <blockquote className="relative z-10 font-serif text-[18px] leading-[1.4] tracking-[-0.54px] text-ink min-[980px]:text-[32px] min-[980px]:leading-[1.3] min-[980px]:tracking-[-0.96px]">
+      <blockquote className="relative z-10 font-serif text-[18px] leading-[1.4] tracking-[-0.54px] text-[#242424] min-[980px]:text-[32px] min-[980px]:leading-[1.3] min-[980px]:tracking-[-0.96px]">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
     </div>
@@ -78,14 +78,14 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[n
 
 export default function TestimonialsSection() {
   return (
-    <section className="shrink-0 bg-background px-[10px] min-[980px]:px-16">
-      <div className="flex flex-col items-center gap-8 border-t border-r border-l border-border px-4 py-[42px] min-[980px]:gap-10 min-[980px]:px-8 min-[980px]:py-[58px]">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col items-center gap-8 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-4 py-[42px] min-[980px]:gap-10 min-[980px]:px-8 min-[980px]:py-[58px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-6">
-          <h2 className="text-center font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-ink min-[980px]:text-[48px] min-[980px]:tracking-[-1.44px]">
+          <h2 className="text-center font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-[#242424] min-[980px]:text-[48px] min-[980px]:tracking-[-1.44px]">
             The work, in their words.
           </h2>
-          <p className="max-w-[546px] text-center font-sans text-[16px] leading-[1.5] font-normal text-grey">
+          <p className="max-w-[546px] text-center font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
             Mercator Partners has been running on WithAI since day one. Their CIO and Head of
             Primary Research on what changed.
           </p>
