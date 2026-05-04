@@ -19,6 +19,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
+## Commands
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Production build |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format all files with Prettier |
+| `npm run format:check` | Check formatting without writing |
+
 ## Project Structure
 
 ```
