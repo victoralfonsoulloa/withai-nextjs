@@ -7,19 +7,16 @@ const points = [
     index: "I",
     title: "A team working with you. Not another SaaS subscription.",
     body: "You get engineers and analysts inside your operation — learning how your firm thinks, and staying close enough to fix what doesn't work.",
-    borderClass: "border-t border-l border-b border-dashed border-[rgba(36,36,36,0.1)]",
   },
   {
     index: "II",
     title: "The best models, let loose on your existing work.",
     body: "Frontier models, conditioned on your memos, models, and taxonomies. The product reshapes itself around you — not the other way around.",
-    borderClass: "border-t border-l border-b border-dashed border-[rgba(36,36,36,0.1)]",
   },
   {
     index: "III",
     title: "Secure by posture. Not by checkbox.",
     body: "Tenant isolation, no training on your data, Treated as a design constraint from day one — not a compliance afterthought.",
-    borderClass: "border border-dashed border-[rgba(36,36,36,0.1)]",
   },
 ];
 
@@ -43,7 +40,7 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className={`relative flex flex-col gap-4 overflow-hidden bg-[#f5f4ee] px-8 py-6 ${point.borderClass} ${isLast ? "min-[980px]:col-span-2 min-[1161px]:col-span-1" : ""}`}
+      className={`relative flex flex-col gap-4 overflow-hidden border-r border-b border-dashed border-[rgba(36,36,36,0.1)] bg-[#f5f4ee] px-8 py-6 ${isLast ? "min-[980px]:col-span-2 min-[1161px]:col-span-1" : ""}`}
       style={{
         outline: "1px dashed",
         outlineOffset: "-1px",
@@ -87,7 +84,7 @@ export default function DifferentSection() {
         </h2>
 
         {/* Three columns */}
-        <div className="flex w-full flex-col min-[980px]:grid min-[980px]:grid-cols-2 min-[1161px]:grid-cols-3">
+        <div className="flex w-full flex-col border-t border-l border-dashed border-[rgba(36,36,36,0.1)] min-[980px]:grid min-[980px]:grid-cols-2 min-[1161px]:grid-cols-3">
           {points.map((point, i) => (
             <SpotlightCard key={point.index} point={point} isLast={i === points.length - 1} />
           ))}
