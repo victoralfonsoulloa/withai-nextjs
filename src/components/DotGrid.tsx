@@ -73,9 +73,11 @@ export default function DotGrid({ variant = "light" }: { variant?: "light" | "da
     const ctx = canvas.getContext("2d")!;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      dotsRef.current = buildDots(canvas.width, canvas.height, cfg);
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.scale(dpr, dpr);
+      dotsRef.current = buildDots(canvas.offsetWidth, canvas.offsetHeight, cfg);
     };
     resize();
 
