@@ -23,7 +23,13 @@ const points = [
   },
 ];
 
-function SpotlightCard({ point, isLast = false }: { point: (typeof points)[number]; isLast?: boolean }) {
+function SpotlightCard({
+  point,
+  isLast = false,
+}: {
+  point: (typeof points)[number];
+  isLast?: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [spotlight, setSpotlight] = useState<{ x: number; y: number } | null>(null);
 
@@ -37,7 +43,7 @@ function SpotlightCard({ point, isLast = false }: { point: (typeof points)[numbe
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
-      className={`relative flex flex-col gap-4 px-8 py-6 bg-[#f5f4ee] overflow-hidden ${point.borderClass} ${isLast ? "min-[980px]:col-span-2 min-[1161px]:col-span-1" : ""}`}
+      className={`relative flex flex-col gap-4 overflow-hidden bg-[#f5f4ee] px-8 py-6 ${point.borderClass} ${isLast ? "min-[980px]:col-span-2 min-[1161px]:col-span-1" : ""}`}
       style={{
         outline: "1px dashed",
         outlineOffset: "-1px",
@@ -47,7 +53,7 @@ function SpotlightCard({ point, isLast = false }: { point: (typeof points)[numbe
     >
       {/* Spotlight */}
       <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
           opacity: spotlight ? 1 : 0,
           background: spotlight
@@ -56,15 +62,15 @@ function SpotlightCard({ point, isLast = false }: { point: (typeof points)[numbe
         }}
       />
 
-      <div className="flex flex-col gap-3 relative z-10">
-        <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
+      <div className="relative z-10 flex flex-col gap-3">
+        <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
           {point.index}
         </span>
-        <h3 className="font-serif text-[18px] min-[980px]:text-[24px] text-[#242424] leading-[1.4] tracking-[-0.54px] min-[980px]:tracking-[-0.72px]">
+        <h3 className="font-serif text-[18px] leading-[1.4] tracking-[-0.54px] text-[#242424] min-[980px]:text-[24px] min-[980px]:tracking-[-0.72px]">
           {point.title}
         </h3>
       </div>
-      <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] relative z-10">
+      <p className="relative z-10 font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
         {point.body}
       </p>
     </div>
@@ -73,15 +79,15 @@ function SpotlightCard({ point, isLast = false }: { point: (typeof points)[numbe
 
 export default function DifferentSection() {
   return (
-    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-10 items-center">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col items-center gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-4 py-[42px] min-[980px]:px-8 min-[980px]:py-[58px]">
         {/* Header */}
-        <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px] max-w-[800px]">
+        <h2 className="max-w-[800px] text-center font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-[#242424] min-[980px]:text-[48px] min-[980px]:tracking-[-1.44px]">
           Three things, plainly stated.
         </h2>
 
         {/* Three columns */}
-        <div className="flex flex-col min-[980px]:grid min-[980px]:grid-cols-2 min-[1161px]:grid-cols-3 w-full">
+        <div className="flex w-full flex-col min-[980px]:grid min-[980px]:grid-cols-2 min-[1161px]:grid-cols-3">
           {points.map((point, i) => (
             <SpotlightCard key={point.index} point={point} isLast={i === points.length - 1} />
           ))}

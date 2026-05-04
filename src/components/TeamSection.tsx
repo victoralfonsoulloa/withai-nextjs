@@ -25,16 +25,15 @@ const founders = [
 
 export default function TeamSection() {
   return (
-    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[42px] min-[980px]:py-[58px] flex flex-col gap-10">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-4 py-[42px] min-[980px]:px-8 min-[980px]:py-[58px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center min-[980px]:flex-row min-[980px]:items-end min-[980px]:justify-between min-[980px]:text-left">
-          <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">
+          <h2 className="font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-[#242424] min-[980px]:text-[48px] min-[980px]:tracking-[-1.44px]">
             Two founders. Both close to the work.
           </h2>
-          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] min-[980px]:w-[352px] min-[980px]:shrink-0">
-            Multiplier is built by the people who&apos;ll sit across the table
-            from you.
+          <p className="font-sans text-[16px] leading-[1.5] font-normal text-[#525252] min-[980px]:w-[352px] min-[980px]:shrink-0">
+            Multiplier is built by the people who&apos;ll sit across the table from you.
           </p>
         </div>
 
@@ -43,29 +42,24 @@ export default function TeamSection() {
           {founders.map((founder) => (
             <div
               key={founder.name}
-              className={`flex-1 flex flex-col gap-4 py-5 px-4 min-[901px]:p-8 ${founder.borderClass}`}
+              className={`flex flex-1 flex-col gap-4 px-4 py-5 min-[901px]:p-8 ${founder.borderClass}`}
             >
               {/* Photo */}
-              <div className="relative h-[231px] min-[572px]:h-[476px] rounded-[5px] overflow-hidden shrink-0">
-                <Image
-                  src={founder.photo}
-                  alt={founder.name}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative h-[231px] shrink-0 overflow-hidden rounded-[5px] min-[572px]:h-[476px]">
+                <Image src={founder.photo} alt={founder.name} fill className="object-cover" />
               </div>
 
               {/* Info */}
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-3">
-                  <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
+                  <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
                     {founder.role}
                   </span>
                   <div className="flex flex-col gap-4">
-                    <h3 className="font-serif text-[20px] min-[572px]:text-[48px] text-[#242424] leading-[1.4] min-[572px]:leading-[1.2] tracking-[-0.6px] min-[572px]:tracking-[-1.44px]">
+                    <h3 className="font-serif text-[20px] leading-[1.4] tracking-[-0.6px] text-[#242424] min-[572px]:text-[48px] min-[572px]:leading-[1.2] min-[572px]:tracking-[-1.44px]">
                       {founder.name}
                     </h3>
-                    <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5]">
+                    <p className="font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
                       {founder.bio}
                     </p>
                   </div>
@@ -76,13 +70,19 @@ export default function TeamSection() {
                   href={founder.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 group self-start"
+                  className="group flex items-center gap-2 self-start"
                 >
-                  <span className="font-sans font-medium text-[16px] text-[#242424] group-hover:underline">
+                  <span className="font-sans text-[16px] font-medium text-[#242424] group-hover:underline">
                     Linkedin
                   </span>
-                  <div className="size-6 overflow-hidden shrink-0 relative">
-                    <Image src={LINKEDIN_ICON} alt="" width={24} height={24} className="object-contain" />
+                  <div className="relative size-6 shrink-0 overflow-hidden">
+                    <Image
+                      src={LINKEDIN_ICON}
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
                   </div>
                 </a>
               </div>

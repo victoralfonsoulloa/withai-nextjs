@@ -133,7 +133,10 @@ function IntegrationRow({
 
   return (
     <div
-      ref={(el) => { mouseRef.current = el; rowRef(el); }}
+      ref={(el) => {
+        mouseRef.current = el;
+        rowRef(el);
+      }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setSpotlight(null)}
       className={`relative flex flex-col gap-6 p-5 min-[980px]:flex-row min-[980px]:items-center min-[980px]:justify-between min-[980px]:px-8 min-[980px]:py-6 ${borderClass}`}
@@ -147,7 +150,7 @@ function IntegrationRow({
     >
       {/* Hover spotlight */}
       <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
           opacity: spotlight ? 1 : 0,
           background: spotlight
@@ -157,16 +160,16 @@ function IntegrationRow({
       />
 
       {/* Left: text */}
-      <div className={`flex flex-col gap-4 relative z-10 ${textMinWidthClass}`}>
+      <div className={`relative z-10 flex flex-col gap-4 ${textMinWidthClass}`}>
         <div className="flex flex-col gap-3">
-          <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
+          <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
             {row.category}
           </span>
-          <h3 className="font-serif text-[24px] text-[#242424] leading-[1.4] tracking-[-0.72px]">
+          <h3 className="font-serif text-[24px] leading-[1.4] tracking-[-0.72px] text-[#242424]">
             {row.title}
           </h3>
         </div>
-        <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5]">
+        <p className="font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
           {row.description}
         </p>
       </div>
@@ -179,7 +182,7 @@ function IntegrationRow({
             src={logo.src}
             alt={logo.name}
             title={logo.name}
-            className="size-12 object-contain shrink-0"
+            className="size-12 shrink-0 object-contain"
           />
         ))}
       </div>
@@ -216,16 +219,16 @@ export default function IntegrationsSection() {
   }, []);
 
   return (
-    <section className="bg-[#f0eee6] px-[10px] min-[980px]:px-16 shrink-0">
-      <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-4 min-[980px]:px-8 py-[52px] flex flex-col gap-10">
+    <section className="shrink-0 bg-[#f0eee6] px-[10px] min-[980px]:px-16">
+      <div className="flex flex-col gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-4 py-[52px] min-[980px]:px-8">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center min-[980px]:flex-row min-[980px]:items-end min-[980px]:justify-between min-[980px]:text-left">
-          <h2 className="font-serif text-[36px] min-[980px]:text-[48px] text-[#242424] leading-[1.2] tracking-[-1.08px] min-[980px]:tracking-[-1.44px]">
+          <h2 className="font-serif text-[36px] leading-[1.2] tracking-[-1.08px] text-[#242424] min-[980px]:text-[48px] min-[980px]:tracking-[-1.44px]">
             Integrate everything
           </h2>
-          <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] min-[980px]:w-[374px] min-[980px]:shrink-0">
-            Connected once, governed properly, kept in sync — so the system
-            thinks across your stack the way your team already does.
+          <p className="font-sans text-[16px] leading-[1.5] font-normal text-[#525252] min-[980px]:w-[374px] min-[980px]:shrink-0">
+            Connected once, governed properly, kept in sync — so the system thinks across your stack
+            the way your team already does.
           </p>
         </div>
 
@@ -236,7 +239,9 @@ export default function IntegrationsSection() {
               key={row.category}
               row={row}
               isScrollActive={activeRows.has(i)}
-              rowRef={(el) => { rowRefs.current[i] = el; }}
+              rowRef={(el) => {
+                rowRefs.current[i] = el;
+              }}
               borderClass={[
                 "border-dashed border-[rgba(36,36,36,0.1)]",
                 "border-t border-l",
@@ -253,9 +258,10 @@ export default function IntegrationsSection() {
         </div>
 
         {/* Footer */}
-        <p className="font-sans font-normal text-[14px] min-[980px]:text-[16px] text-[#525252] leading-[1.5] text-center">
-          <span className="font-semibold text-[#242424]">Don&apos;t see something?</span>{" "}
-          If your firm runs on it, we&apos;ll connect to it. Custom integrations are part of the partnership, not a line item.
+        <p className="text-center font-sans text-[14px] leading-[1.5] font-normal text-[#525252] min-[980px]:text-[16px]">
+          <span className="font-semibold text-[#242424]">Don&apos;t see something?</span> If your
+          firm runs on it, we&apos;ll connect to it. Custom integrations are part of the
+          partnership, not a line item.
         </p>
       </div>
     </section>

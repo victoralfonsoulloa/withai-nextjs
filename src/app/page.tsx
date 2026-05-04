@@ -10,9 +10,9 @@ import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#f0eee6] pt-[69px]">
+    <main className="flex min-h-screen flex-col bg-[#f0eee6] pt-[69px]">
       <Header />
-      <div className="w-full max-w-[90rem] mx-auto flex flex-col">
+      <div className="mx-auto flex w-full max-w-[90rem] flex-col">
         <HeroSection />
         <SocialProofBar />
         <CapabilitiesSection />

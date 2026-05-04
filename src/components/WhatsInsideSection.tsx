@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const STICKY_TOP = 80; // px from viewport top where first card sticks
-const STACK_GAP = 12;  // px of previous card that peeks below the next
+const STACK_GAP = 12; // px of previous card that peeks below the next
 
 const pillars = [
   {
@@ -68,12 +68,14 @@ const capabilities = [
 
 function Badge({ label, className = "self-start" }: { label: string; className?: string }) {
   return (
-    <div className={`border border-[rgba(36,36,36,0.1)] rounded-[24px] flex items-center gap-2.5 px-[15px] py-[10px] shrink-0 ${className}`}>
+    <div
+      className={`flex shrink-0 items-center gap-2.5 rounded-[24px] border border-[rgba(36,36,36,0.1)] px-[15px] py-[10px] ${className}`}
+    >
       <span className="relative flex size-2.5 shrink-0">
-        <span className="absolute inline-flex size-full rounded-full bg-green-400 opacity-75 animate-ping" />
+        <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
         <span className="relative inline-flex size-2.5 rounded-full bg-green-500" />
       </span>
-      <span className="font-mono text-[12px] text-[rgba(26,26,24,0.77)] uppercase tracking-[0.6px]">
+      <span className="font-mono text-[12px] tracking-[0.6px] text-[rgba(26,26,24,0.77)] uppercase">
         {label}
       </span>
     </div>
@@ -103,7 +105,7 @@ function SpotlightCell({ children, className }: { children: React.ReactNode; cla
       }}
     >
       <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
           opacity: spotlight ? 1 : 0,
           background: spotlight
@@ -116,18 +118,34 @@ function SpotlightCell({ children, className }: { children: React.ReactNode; cla
   );
 }
 
-function CapabilityCell({ cap, borders, halfWidth }: {
+function CapabilityCell({
+  cap,
+  borders,
+  halfWidth,
+}: {
   cap: (typeof capabilities)[number];
   borders: string;
   halfWidth?: boolean;
 }) {
   return (
-    <SpotlightCell className={["bg-[#f5f4ee] px-8 py-6 flex flex-col gap-4", halfWidth ? "w-1/2" : "flex-1", borders].join(" ")}>
-      <div className="flex flex-col gap-3 relative z-10">
-        <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">{cap.label}</span>
-        <h3 className="font-serif text-[24px] text-[#242424] leading-[1.4] tracking-[-0.72px]">{cap.title}</h3>
+    <SpotlightCell
+      className={[
+        "flex flex-col gap-4 bg-[#f5f4ee] px-8 py-6",
+        halfWidth ? "w-1/2" : "flex-1",
+        borders,
+      ].join(" ")}
+    >
+      <div className="relative z-10 flex flex-col gap-3">
+        <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
+          {cap.label}
+        </span>
+        <h3 className="font-serif text-[24px] leading-[1.4] tracking-[-0.72px] text-[#242424]">
+          {cap.title}
+        </h3>
       </div>
-      <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] relative z-10">{cap.body}</p>
+      <p className="relative z-10 font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
+        {cap.body}
+      </p>
     </SpotlightCell>
   );
 }
@@ -161,50 +179,53 @@ export default function WhatsInsideSection() {
   return (
     <>
       {/* — Pillars — */}
-      <section className="bg-[#f0eee6] px-16 shrink-0">
-        <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[52px] flex gap-10">
-
+      <section className="shrink-0 bg-[#f0eee6] px-16">
+        <div className="flex gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-8 py-[52px]">
           {/* Left: heading — self-start so sticky works; stays visible during card stacking */}
-          <div className="flex-1 flex flex-col gap-2.5 justify-center sticky top-[80px] self-start">
+          <div className="sticky top-[80px] flex flex-1 flex-col justify-center gap-2.5 self-start">
             <Badge label="what's inside" />
-            <h2 className="font-serif text-[48px] text-[#242424] leading-[1.2] tracking-[-1.44px] w-[616px] mt-1">
+            <h2 className="mt-1 w-[616px] font-serif text-[48px] leading-[1.2] tracking-[-1.44px] text-[#242424]">
               Everything an asset manager actually needs from AI
             </h2>
-            <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] mt-1">
-              Not a model. Not a chatbot. A working system — engineered,
-              integrated, and supported — that lives inside your firm.
+            <p className="mt-1 font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
+              Not a model. Not a chatbot. A working system — engineered, integrated, and supported —
+              that lives inside your firm.
             </p>
           </div>
 
           {/* Right: sticky stacking cards — no padding, section height drives scroll range */}
-          <div className="flex-1 flex flex-col">
+          <div className="flex flex-1 flex-col">
             {pillars.map((pillar, i) => (
               <div
                 key={pillar.index}
-                ref={(el) => { wrapperRefs.current[i] = el; }}
+                ref={(el) => {
+                  wrapperRefs.current[i] = el;
+                }}
                 className="sticky"
                 style={{ top: STICKY_TOP + STACK_GAP * i, zIndex: i + 1 }}
               >
                 <div
-                  ref={(el) => { innerRefs.current[i] = el; }}
+                  ref={(el) => {
+                    innerRefs.current[i] = el;
+                  }}
                   style={{ transformOrigin: "top center", willChange: "transform, filter" }}
                 >
                   <SpotlightCell
                     className={[
-                      "bg-[#f5f4ee] px-8 py-6 flex flex-col gap-4",
+                      "flex flex-col gap-4 bg-[#f5f4ee] px-8 py-6",
                       "border-t border-l border-dashed border-[rgba(36,36,36,0.1)]",
-                      i === pillars.length - 1 ? "border-b border-r" : "",
+                      i === pillars.length - 1 ? "border-r border-b" : "",
                     ].join(" ")}
                   >
-                    <div className="flex flex-col gap-3 relative z-10">
-                      <span className="font-mono text-[12px] text-[#525252] uppercase tracking-[0.6px]">
+                    <div className="relative z-10 flex flex-col gap-3">
+                      <span className="font-mono text-[12px] tracking-[0.6px] text-[#525252] uppercase">
                         {pillar.index}
                       </span>
-                      <h3 className="font-serif text-[24px] text-[#242424] leading-[1.4] tracking-[-0.72px]">
+                      <h3 className="font-serif text-[24px] leading-[1.4] tracking-[-0.72px] text-[#242424]">
                         {pillar.title}
                       </h3>
                     </div>
-                    <p className="font-sans font-normal text-[16px] text-[#525252] leading-[1.5] relative z-10">
+                    <p className="relative z-10 font-sans text-[16px] leading-[1.5] font-normal text-[#525252]">
                       {pillar.body}
                     </p>
                   </SpotlightCell>
@@ -212,38 +233,43 @@ export default function WhatsInsideSection() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* — Eight ways — */}
-      <section className="bg-[#f0eee6] px-16 shrink-0">
-        <div className="border-t border-l border-r border-[rgba(36,36,36,0.1)] px-8 py-[52px] flex flex-col gap-10 items-center">
-          <div className="flex flex-col gap-2.5 items-center">
+      <section className="shrink-0 bg-[#f0eee6] px-16">
+        <div className="flex flex-col items-center gap-10 border-t border-r border-l border-[rgba(36,36,36,0.1)] px-8 py-[52px]">
+          <div className="flex flex-col items-center gap-2.5">
             <Badge label="what's inside" className="self-center" />
-            <h2 className="font-serif text-[48px] text-[#242424] text-center leading-[1.2] tracking-[-1.44px] w-[616px] mt-1">
+            <h2 className="mt-1 w-[616px] text-center font-serif text-[48px] leading-[1.2] tracking-[-1.44px] text-[#242424]">
               Eight ways it shows up in the work.
             </h2>
           </div>
 
-          <div className="w-full flex flex-col">
+          <div className="flex w-full flex-col">
             <div className="flex">
               {capabilities.slice(0, 3).map((cap, i) => (
-                <CapabilityCell key={cap.label} cap={cap}
+                <CapabilityCell
+                  key={cap.label}
+                  cap={cap}
                   borders={`border-t border-l border-dashed border-[rgba(36,36,36,0.1)] ${i === 2 ? "border-r" : ""}`}
                 />
               ))}
             </div>
             <div className="flex">
               {capabilities.slice(3, 6).map((cap, i) => (
-                <CapabilityCell key={cap.label} cap={cap}
+                <CapabilityCell
+                  key={cap.label}
+                  cap={cap}
                   borders={`border-t border-l border-dashed border-[rgba(36,36,36,0.1)] ${i === 2 ? "border-r" : ""}`}
                 />
               ))}
             </div>
             <div className="flex">
               {capabilities.slice(6, 8).map((cap, i) => (
-                <CapabilityCell key={cap.label} cap={cap}
+                <CapabilityCell
+                  key={cap.label}
+                  cap={cap}
                   borders={`border-t border-b border-l border-dashed border-[rgba(36,36,36,0.1)] ${i === 1 ? "border-r" : ""}`}
                   halfWidth
                 />

@@ -22,8 +22,8 @@ interface Config {
   clearRadius: number; // normalized dist below which no dots appear
 }
 
-const LIGHT: Config = { originX: 0.5,  originY: 0.1,  clearRadius: 0.42 };
-const DARK:  Config = { originX: 0.38, originY: 0.22, clearRadius: 0.1  };
+const LIGHT: Config = { originX: 0.5, originY: 0.1, clearRadius: 0.42 };
+const DARK: Config = { originX: 0.38, originY: 0.22, clearRadius: 0.1 };
 
 function buildDots(W: number, H: number, cfg: Config): DotData[] {
   const dots: DotData[] = [];
@@ -86,7 +86,9 @@ export default function DotGrid({ variant = "light" }: { variant?: "light" | "da
       const rect = canvas.getBoundingClientRect();
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
-    const onLeave = () => { mouse.current = null; };
+    const onLeave = () => {
+      mouse.current = null;
+    };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseleave", onLeave);
 
@@ -115,7 +117,9 @@ export default function DotGrid({ variant = "light" }: { variant?: "light" | "da
         if (variant === "dark") {
           // Monochromatic: lerp from dark gray (70) to near-white (230)
           const v = Math.round(70 + dot.shade * 160);
-          r = v; g = v; b = v;
+          r = v;
+          g = v;
+          b = v;
         } else {
           // Light: dark ink with ~12% warm-brown accent
           const isWarm = dot.shade < 0.12;
@@ -150,5 +154,5 @@ export default function DotGrid({ variant = "light" }: { variant?: "light" | "da
     };
   }, [cfg]);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 size-full pointer-events-none" />;
+  return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 size-full" />;
 }

@@ -23,19 +23,16 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: "WithAI — AI for asset managers",
-  description:
-    "Security, infrastructure, and white-glove service for harnessing agents.",
+  description: "Security, infrastructure, and white-glove service for harnessing agents.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
       className={`${crimsonText.variable} ${onest.variable} ${dmMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

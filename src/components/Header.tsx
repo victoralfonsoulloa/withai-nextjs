@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 h-[69px] flex items-center justify-center border-b border-black/10 transition-transform duration-300 ease-in-out"
+      className="fixed top-0 right-0 left-0 z-50 flex h-[69px] items-center justify-center border-b border-black/10 transition-transform duration-300 ease-in-out"
       style={{
         transform: visible ? "translateY(0)" : "translateY(-100%)",
         backgroundColor: "rgba(240, 238, 230, 0.55)",
@@ -40,13 +40,13 @@ export default function Header() {
         WebkitBackdropFilter: "blur(12px)",
       }}
     >
-      <div className="flex items-center justify-between w-full max-w-[90rem] px-[10px] min-[980px]:px-16">
+      <div className="flex w-full max-w-[90rem] items-center justify-between px-[10px] min-[980px]:px-16">
         <Image src="/logos/withai-logo.svg" alt="WithAI" width={43} height={43} />
         <a
           href="https://cal.com/imj-mcinnis/video-call?duration=30"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-[#242424] px-5 py-2 rounded-[10px] text-[16px] font-medium font-sans text-[#242424] hover:bg-[#f5f4ee] active:bg-[#e8e6de] active:scale-[0.97] touch-manipulation transition-all duration-150"
+          className="touch-manipulation rounded-[10px] border border-[#242424] px-5 py-2 font-sans text-[16px] font-medium text-[#242424] transition-all duration-150 hover:bg-[#f5f4ee] active:scale-[0.97] active:bg-[#e8e6de]"
         >
           Book a consultation
         </a>
